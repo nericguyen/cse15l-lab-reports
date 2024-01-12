@@ -16,7 +16,8 @@ Because this blogpost champions thorough scrutiny, we will be showing all three 
 provided with a picture of the terminal and a **short** explanation of the output it relates to.
 
 *side note: we will assume that the workspace we will be utiziling has the following files*
-![Image]
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/fc40f9df-6fc3-43c9-abe0-78d16a8aa549)
+
 
 ---
 
