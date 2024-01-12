@@ -16,12 +16,12 @@ I will show you the power of Markdown!
 
 --
 
-...
+```
 hahaha block
-...
+```
 
-'woah'
+`woah`
 
-*list
-*list
-*list
+* list
+* list
+* list
