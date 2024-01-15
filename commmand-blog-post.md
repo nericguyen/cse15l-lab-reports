@@ -15,7 +15,7 @@ Commands such as these can, or in some cases must, have a path that must follow 
 Because this blogpost champions thorough scrutiny, we will be showing all three possibilities for the three commands, making a grand total of NINE examples.  Each example will be
 provided with a picture of the terminal and a **short** explanation of the output it relates to.
 
-*side note: we will assume that the workspace we will be utiziling has the following files and directories*
+*important note: we will assume that the workspace we will be utiziling has the following files and directories*
 ![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/fc40f9df-6fc3-43c9-abe0-78d16a8aa549)
 
 
@@ -51,9 +51,27 @@ Let's say we are starting in the **/home** root again and we want to change the 
 # Listing Files and Folders of Path
 Directories and files can only be accessed from a parent dirctory, and if you don't have access to a sidebar that shows the relative location of your files and directories, then it would be near impossible to know whether you can access certain files or not.  This is where the `ls` command comes in handy!  It has the beautiful feature of printing out all the files and directories of a certain path.
 
-## No argument
+## No Argument
 ![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/0c7b57f3-775a-4d76-819c-0a0baaf91d34)
 
 If your working directory is **/home**, then the `ls` command prints out the only directory name in **/home**: lecture1.  It may seem that having no argument would always print out the contents of **/home**, similar to the empty command of `cd`.  However, if you change the working directory to **/home/lecture1**, then the `ls` command prints the files and directory names within lecture1.  The reasonable conclusion is that an empty `ls` command prints out the file and directory names of the current working directory.  This is not an error and seems to be an intentional shortcut for the user.
+
+## Directory Path
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/72e34cbb-452e-4d4b-92cb-70f61b4aa104)
+
+The working directory in this example is the root **/home**, and typing in a relative path in the command line prints out the names of the files and directories in the resolved absolute path.  In the example, the names of the files in the messages directory were printed.  It can also be seen that doing so does not change the working directory, and it remains as **/home**.  No errors are present here.  This is the intended way to use the command `ls`, and is a quick and easy way to see an overview of any section of your workspace.
+
+## File Path
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/5894491e-ed6a-4f71-8ef6-27925f527f77)
+
+The results of typing the `ls` command followed by a file path has a relatively simple output, but the explanation in words can be a bit lengthy so try not to get lost in all the words.  The picture above does a great job in helping keep track of what I'm about to type.  In summary though, if you try to use the `ls` command on a relative path that leads to a file and not a directory, the output is exactly the relative path you type in the `ls` command.  In the first attempt starting in the **/home** root, the `ls` command is typed with **lecture1/messages/en-us.txt**, and since it leads to a file, the output is simply **lecture1/messages/en-us.txt**.  To experiment with this, we change the directory to the messages and attempt to access the same file with just the relative path **en-us.txt**, since we are already in the working directory messages.  This spits out an output of just **en-us.txt**.  None of the `ls` commands changes the working directory.  In conclusion, we can see that the `ls` command typed with a file path does not just print of the absolute path of the file, but rather just what the user inputs as the relative path.  This is definitely not the intended usage of the `ls` command and can be seen as an error, simply outputting exactly what the user inputs.
+
+# Concatenating File Contents
+The `cd` and `ls` command both don't seem to be of any use for us when wanting to access files, so what can we use?  This is where the `cat` command comes in handy (short for concatenate).  This command prints the text within a file as an output.
+
+## No Argument
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/8dfd8c33-7532-4ced-a7e7-42ebc23dda60)
+
+The `cat` command with no argument brings about the oddest output we've witnessed so far.  If you are in the root **/home** and type the cat command, the terminal "kicks you off" the command line and the terminal does not respond to any commands.  Typing control+C on Mac restores the terminal and puts you back on a command line.  This happens if the working directory contains files, such as the messages directory.  This is definitely a major error that can cause frustration if you don't know how to get back to the initial working directory.  
 
 ## Directory Path
