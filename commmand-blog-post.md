@@ -48,6 +48,8 @@ Some things get a little finicky when the absolute path you want to travel to is
 
 Let's say we are starting in the **/home** root again and we want to change the working directory to the file en-us.txt.  What we can try to do is use our handy `cd` command followed by the relative path of **lecture1/messages/en-us.txt**.  However, the command line spits out a sort of error message and reads the above.  The working directory can only be directories, so the command output instead spits out the relative path you're trying to access and tells you it is not a directory.  Files are not directories!!! Keep in mind that the working directory does not move to anywhere else as a result, still being at **/home**.  
 
+---
+
 # Listing Files and Folders of Path
 Directories and files can only be accessed from a parent dirctory, and if you don't have access to a sidebar that shows the relative location of your files and directories, then it would be near impossible to know whether you can access certain files or not.  This is where the `ls` command comes in handy!  It has the beautiful feature of printing out all the files and directories of a certain path.
 
@@ -66,6 +68,8 @@ The working directory in this example is the root **/home**, and typing in a rel
 
 The results of typing the `ls` command followed by a file path has a relatively simple output, but the explanation in words can be a bit lengthy so try not to get lost in all the words.  The picture above does a great job in helping keep track of what I'm about to type.  In summary though, if you try to use the `ls` command on a relative path that leads to a file and not a directory, the output is exactly the relative path you type in the `ls` command.  In the first attempt starting in the **/home** root, the `ls` command is typed with **lecture1/messages/en-us.txt**, and since it leads to a file, the output is simply **lecture1/messages/en-us.txt**.  To experiment with this, we change the directory to the messages and attempt to access the same file with just the relative path **en-us.txt**, since we are already in the working directory messages.  This spits out an output of just **en-us.txt**.  None of the `ls` commands changes the working directory.  In conclusion, we can see that the `ls` command typed with a file path does not just print of the absolute path of the file, but rather just what the user inputs as the relative path.  This is definitely not the intended usage of the `ls` command and can be seen as an error, simply outputting exactly what the user inputs.
 
+---
+
 # Concatenating File Contents
 The `cd` and `ls` command both don't seem to be of any use for us when wanting to access files, so what can we use?  This is where the `cat` command comes in handy (short for concatenate).  This command prints the text within a file as an output.
 
@@ -75,3 +79,17 @@ The `cd` and `ls` command both don't seem to be of any use for us when wanting t
 The `cat` command with no argument brings about the oddest output we've witnessed so far.  If you are in the root **/home** and type the cat command, the terminal "kicks you off" the command line and the terminal does not respond to any commands.  Typing control+C on Mac restores the terminal and puts you back on a command line.  This happens if the working directory contains files, such as the messages directory.  This is definitely a major error that can cause frustration if you don't know how to get back to the initial working directory.  
 
 ## Directory Path
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/91d7e90b-86eb-4282-baa8-946fc4786ebd)
+
+In both commands run above, the working directory is the root **/home**.  Typing the `cat` command and following it by the relative path of the directory **lecture1** produces an output that tells the user that the relative path they typed "Is a directory."  Doing this for a directory containing files, such as messages, still produces a similar output.  In conclusion, typing the `cat` command with a relative path that resolves to a directory spits out an error message that tells the user that the relative path "Is a directory" and cannot print out anything else.
+
+## File Path
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/df8878fe-01fd-4ca2-ae8f-2aaf42e2b988)
+
+Onto the intended method of using the code, typing a relative path to a file after the `cat` outputs all of the text in the aforementioned file.  Even if the working directory is the root **/home**, as long as the correct relative path is typed, the terminal can print out the contents of any file it can access.  A cool property of the `cat` command is that it allows you to print multiple files at once.  By typing spaces between each file path you want to print, it prints out the files in the order typed and with a line break between each.  No errors here folks! This is the intended way to use the `cat` command.
+
+---
+
+# Conclusion
+Thank you for reading my blogpost! I hope you learned something for the next time you want to traverse your next directory!
+![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/dd4c45c1-e8b8-45c2-882f-fa113b994340)
