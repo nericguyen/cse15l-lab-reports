@@ -36,6 +36,7 @@ In actuality, the `cd` command with no argument takes your working directory to 
 
 ## Directory Path
 You may be wondering how I had the working directory changed to **/home/lecture1/messages** in my last example.  Well, this next example will showcase how!
+
 ![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/48027553-71b7-4009-b418-610f022dca2f)
 
 Using the `pwd` command to see that we are starting from **\home**, typing the `cd` command followed by a space and the relative path we want to change the working directory to simply... changes the working directory to the absolute path we want to change it to.  Since I typed **lecture1/messages** after `cd`, it changed the working directory from **\home**
@@ -52,6 +53,7 @@ Directories and files can only be accessed from a parent dirctory, and if you do
 
 ## No argument
 ![image](https://github.com/nericguyen/cse15l-lab-reports/assets/149546505/0c7b57f3-775a-4d76-819c-0a0baaf91d34)
+
 If your working directory is **/home**, then the `ls` command prints out the only directory name in **/home**: lecture1.  It may seem that having no argument would always print out the contents of **/home**, similar to the empty command of `cd`.  However, if you change the working directory to **/home/lecture1**, then the `ls` command prints the files and directory names within lecture1.  The reasonable conclusion is that an empty `ls` command prints out the file and directory names of the current working directory.  This is not an error and seems to be an intentional shortcut for the user.
 
 ## Directory Path
